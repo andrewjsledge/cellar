@@ -1,0 +1,10 @@
+[program:cellar]
+command=/srv/cellar/bin/gunicorn_start.sh
+directory=/srv/cellar
+user=webapp
+process_name="cellar"
+autostart=true
+environment=PATH="/srv/cellar/bin:${PATH}"
+autorestart=true
+stdout_logfile=/srv/cellar/logs/gunicorn_supervisor.log
+redirect_stderr=true
